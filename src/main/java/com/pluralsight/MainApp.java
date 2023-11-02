@@ -37,27 +37,23 @@ public class MainApp {
                 break;
         }
         if (player2.isEmpty()) {
-            player2 = " John Cena";
+            player2 = "John Cena";
         }
         if (player1.isEmpty()) {
-            player1 = " The Chosen One";
+            player1 = "The Chosen One";
         }
 
         //player 1 deck
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             Card card = deck.deal();
-            deck.shuffle();
-            deck.shuffle();
             deck.shuffle();
             hand1.deal(card);
 
         }
 
         //player 2 deck
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             Card card = deck.deal();
-            deck.shuffle();
-            deck.shuffle();
             deck.shuffle();
             hand2.deal(card);
 
@@ -65,12 +61,13 @@ public class MainApp {
         //int totalHandValue = deck.
         int handValue1 = hand1.getValue();
         int handValue2 = hand2.getValue();
-        if (handValue2 > handValue1) {
+        if (handValue2 > handValue1 && handValue2 <= 21) {
             System.out.println("The winner is " + player2 + "! " + "Here is the value of your hand " + handValue2 + " " + hand2.getSize());
-        } else {
+        } else if(handValue2 < handValue1 && handValue1 <= 21) {
             System.out.println("The winner is " + player1 + "! " + "Here is the value of your hand " + handValue1+ " " + hand1.getSize());
+        } else{
+            System.out.println("It's a draw");
         }
-        //System.out.println(totalHandValue);
 
     }
 }

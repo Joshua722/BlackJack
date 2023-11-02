@@ -14,7 +14,7 @@ public class Card {
         if (isFaceUp) {
             return suit;
         } else {
-            return null;
+            return "#";
         }
     }
 
@@ -27,10 +27,10 @@ public class Card {
             if(value.equalsIgnoreCase("K") || value.equalsIgnoreCase("Q") || value.equalsIgnoreCase("J")){
                 return 10;
             }
-            return Integer.parseInt(value);
         } else {
             return 0;
         }
+        return Integer.parseInt(value);
     }
 
     public boolean isFaceUp() {
